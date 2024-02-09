@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+	--main-edit-color: #0077ff;
+	--main-bg-color: #18181b;
+}
+
+body {
+	background-color: var(--main-bg-color);
+}
+
+input::-webkit-calendar-picker-indicator {
+	filter: invert(1);
+}
+
+.main-text-color {
+	color: var(--main-edit-color);
+}
+
+.border-color {
+	border-color: var(--main-edit-color);
+}
+
+.border-bg {
+	background: none;
+}
+
+.btn-bg {
+	background-color: var(--main-edit-color);
+}
+
+.btn-text {
+	color: var(--main-bg-color);
+}
