@@ -4,12 +4,12 @@ import Button from '../Form/Button/Button.jsx';
 import Form from '../Form/Form.jsx';
 
 export default function MainScreen({ changeTab }) {
-	const inputRefNameEvent = React.createRef('');
-	const inputRefTextEvent = React.createRef('');
-	const inputRefMainColor = React.createRef('');
-	const inputRefBgColor = React.createRef('');
-	const inputRefDate = React.createRef('');
-	const inputRefTime = React.createRef('');
+	const inputRefNameEvent = React.createRef();
+	const inputRefTextEvent = React.createRef();
+	const inputRefMainColor = React.createRef();
+	const inputRefBgColor = React.createRef();
+	const inputRefDate = React.createRef();
+	const inputRefTime = React.createRef();
 
 	function localStorageWrite(name, value) {
 		localStorage.setItem(name, value);
@@ -41,10 +41,14 @@ export default function MainScreen({ changeTab }) {
 					type='text'
 					ref={inputRefTextEvent}
 				/>
-				<Form labelName='Main color:' type='color' ref={inputRefMainColor} />
+				<Form
+					labelName='Main color:'
+					type='colorMain'
+					ref={inputRefMainColor}
+				/>
 				<Form
 					labelName='Background color:'
-					type='color'
+					type='colorBg'
 					ref={inputRefBgColor}
 				/>
 				<Form labelName='Date the event:' type='date' ref={inputRefDate} />

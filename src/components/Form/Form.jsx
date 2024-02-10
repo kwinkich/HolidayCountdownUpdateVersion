@@ -1,13 +1,14 @@
+// Form.jsx
 import PropTypes from 'prop-types';
-import React from 'react';
-// import Button from './Button/Button';
-import InputColor from './Inputs/InputColor';
+import { forwardRef } from 'react';
+import InputColorBg from './Inputs/InputColorBg';
+import InputColorMain from './Inputs/InputColorMain';
 import InputDate from './Inputs/InputDate';
 import InputText from './Inputs/InputText';
 import InputTime from './Inputs/InputTime';
 import Label from './Label/Label';
 
-const Form = React.forwardRef(({ labelName, type }, ref) => {
+const Form = forwardRef(({ labelName, type }, ref) => {
 	console.log(type);
 
 	switch (type) {
@@ -16,15 +17,20 @@ const Form = React.forwardRef(({ labelName, type }, ref) => {
 				<div className='w-[350px] flex justify-between items-center mb-4'>
 					<Label labelName={labelName} />
 					<InputText ref={ref} />
-					{/* <Button click={handleClick} /> */}
 				</div>
 			);
-		case 'color':
+		case 'colorMain':
 			return (
 				<div className='w-[350px] flex justify-between items-center mb-4'>
 					<Label labelName={labelName} />
-					<InputColor ref={ref} />
-					{/* <Button click={handleClick} /> */}
+					<InputColorMain ref={ref} />
+				</div>
+			);
+		case 'colorBg':
+			return (
+				<div className='w-[350px] flex justify-between items-center mb-4'>
+					<Label labelName={labelName} />
+					<InputColorBg ref={ref} />
 				</div>
 			);
 		case 'date':
@@ -32,7 +38,6 @@ const Form = React.forwardRef(({ labelName, type }, ref) => {
 				<div className='w-[350px] flex justify-between items-center mb-4'>
 					<Label labelName={labelName} />
 					<InputDate ref={ref} />
-					{/* <Button click={handleClick} /> */}
 				</div>
 			);
 		case 'time':
@@ -40,9 +45,10 @@ const Form = React.forwardRef(({ labelName, type }, ref) => {
 				<div className='w-[350px] flex justify-between items-center mb-4'>
 					<Label labelName={labelName} />
 					<InputTime ref={ref} />
-					{/* <Button click={handleClick} /> */}
 				</div>
 			);
+		default:
+			return null;
 	}
 });
 
