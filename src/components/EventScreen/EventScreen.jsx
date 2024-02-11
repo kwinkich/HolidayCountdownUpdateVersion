@@ -63,7 +63,7 @@ export default function EventScreen({ changeTab }) {
 
 	return (
 		<section className='mx-auto container flex flex-col justify-center items-center h-screen'>
-			<h1 className='text-4xl main-text-color mb-10'>
+			<h1 className='text-4xl main-text-color mb-10 text-center'>
 				{localStorage.getItem('inputRefNameEvent')}
 			</h1>
 			{!isEventEnd && (
