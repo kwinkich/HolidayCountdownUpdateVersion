@@ -9,40 +9,38 @@ import InputTime from './Inputs/InputTime';
 import Label from './Label/Label';
 
 const Form = forwardRef(({ labelName, type }, ref) => {
-	console.log(type);
-
 	switch (type) {
 		case 'text':
 			return (
-				<div className='w-[350px] flex justify-between items-center mb-4'>
+				<div className='flex flex-col gap-y-2 sm:gap-0 sm:flex-row sm:w-[350px] sm:justify-between sm:items-center sm:mb-4'>
 					<Label labelName={labelName} />
 					<InputText ref={ref} />
 				</div>
 			);
 		case 'colorMain':
 			return (
-				<div className='w-[350px] flex justify-between items-center mb-4'>
+				<div className='flex flex-col gap-y-2 sm:gap-0 sm:flex-row sm:w-[350px] sm:justify-between sm:items-center sm:mb-4'>
 					<Label labelName={labelName} />
 					<InputColorMain ref={ref} />
 				</div>
 			);
 		case 'colorBg':
 			return (
-				<div className='w-[350px] flex justify-between items-center mb-4'>
+				<div className='flex flex-col gap-y-2 sm:gap-0 sm:flex-row sm:w-[350px] sm:justify-between sm:items-center sm:mb-4'>
 					<Label labelName={labelName} />
 					<InputColorBg ref={ref} />
 				</div>
 			);
 		case 'date':
 			return (
-				<div className='w-[350px] flex justify-between items-center mb-4'>
+				<div className='flex flex-col gap-y-2 sm:gap-0 sm:flex-row sm:w-[350px] sm:justify-between sm:items-center sm:mb-4'>
 					<Label labelName={labelName} />
 					<InputDate ref={ref} />
 				</div>
 			);
 		case 'time':
 			return (
-				<div className='w-[350px] flex justify-between items-center mb-4'>
+				<div className='flex flex-col gap-y-2 sm:gap-0 sm:flex-row sm:w-[350px] sm:justify-between sm:items-center sm:mb-4'>
 					<Label labelName={labelName} />
 					<InputTime ref={ref} />
 				</div>

@@ -17,6 +17,7 @@ const InputColorMain = React.forwardRef((props, ref) => {
 			ref={ref}
 			type='color'
 			onChange={handleMainColorChange}
+			defaultValue='#0077ff'
 			className='h-[35px] w-[55px] text-white border-2 border-color border-bg'
 		/>
 	);

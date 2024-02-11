@@ -20,6 +20,10 @@ input::-webkit-calendar-picker-indicator {
 	color: var(--main-edit-color);
 }
 
+.bg-color {
+	background-color: var(--main-bg-color);
+}
+
 .border-color {
 	border-color: var(--main-edit-color);
 }
