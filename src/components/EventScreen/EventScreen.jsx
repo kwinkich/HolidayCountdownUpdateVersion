@@ -27,7 +27,7 @@ export default function EventScreen({ changeTab }) {
 	const time = localStorage.getItem('inputRefTime');
 
 	const selectedDateTime = moment(`${date} ${time}`);
-	const currentTime = new Date();
+	const currentTime = moment();
 	const holidayDate = selectedDateTime.diff(currentTime);
 	const [remainingTime, setRemainingTime] = useState(holidayDate);
 
@@ -38,11 +38,14 @@ export default function EventScreen({ changeTab }) {
 			setRemainingTime(holidayDate);
 		}, 1000);
 
+		if (remainingTime <= 0) {
+			clearInterval(intervalId);
+		}
+		console.log('render');
 		return () => clearInterval(intervalId);
-	}, [selectedDateTime]);
+	}, [selectedDateTime, remainingTime]);
 
 	const isEventEnd = remainingTime <= 0;
-	// --> TimeLogic
 
 	function killEvent() {
 		localStorageDelete('inputRefNameEvent');
@@ -55,6 +58,8 @@ export default function EventScreen({ changeTab }) {
 		changeTab('main');
 		setIsModalOpen(false);
 	}
+
+	// -->
 
 	return (
 		<section className='mx-auto container flex flex-col justify-center items-center h-screen'>
